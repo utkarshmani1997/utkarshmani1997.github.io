@@ -1,0 +1,17 @@
+# Skills grouped by category — shown in Developer mode.
+# Sourced from Utkarsh_Mani_Tripathi_CV.docx.
+
+- group: Languages
+  items: [Go, C, C++, Bash]
+
+- group: Cloud & Containers
+  items: [Kubernetes, Docker, GCP, GKE, CSI, Microservices]
+
+- group: Storage & Data
+  items: [PostgreSQL, RabbitMQ, LRU Caching, SQL Optimization]
+
+- group: Observability & Debugging
+  items: [Prometheus, Grafana, Distributed Tracing, pprof, gdb, tcpdump]
+
+- group: Practices
+  items: [Concurrency, REST APIs, CI/CD, PLG, DevSecOps]

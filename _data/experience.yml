@@ -1,0 +1,38 @@
+# Professional experience — shown in Developer mode.
+# Sourced from Utkarsh_Mani_Tripathi_CV.docx.
+
+- company: JFrog
+  location: Bangalore, India
+  role: Senior Software Engineer
+  period: Nov 2022 — Present
+  highlights:
+    - "Product-Led Growth (Curation): designed and shipped an in-product onboarding flow that drove a 35% adoption increase within one month and won net-new customer contracts."
+    - "Xray reliability & observability: expanded instrumentation into database and data-migration flows, eliminating a leading source of production bugs and speeding up root-cause analysis."
+    - "Xray–Jira integration (Jira Security App): built the integration that automates ticket creation directly from detected vulnerabilities."
+    - "Performance at scale: scaled services to thousands of requests/sec via Go concurrency, LRU caching, and SQL query optimization; cut artifact scan time with a producer-consumer redesign."
+    - "Monitoring & tooling: instrumented services with Prometheus, built Grafana dashboards, and shipped log-parsing tools for large-scale customers."
+
+- company: JFrog
+  location: Bangalore, India
+  role: Software Engineer
+  period: Jun 2020 — Oct 2022
+  highlights:
+    - "Xray feature delivery: developed data reduction and recovery, Git integration, and distroless image scanning, with end-to-end test automation for each release."
+    - "API performance & customer support: improved long-running API latency through LRU caching, query optimization, and Go concurrency; supported enterprise customers across SaaS and on-prem."
+    - "Community projects & internal tooling: shipped features for GoCenter, ConanCenter, and Bintray; built log-parsing utilities and Slack bots for proactive monitoring and automated remediation."
+
+- company: MayaData Inc.
+  location: Bangalore, India
+  role: Software Engineer
+  period: May 2018 — May 2020
+  highlights:
+    - "Kubernetes-native storage: designed and built the Jiva-operator and CSI-Driver microservices in Go for storage management on Kubernetes."
+    - "Open-source & quality: contributed to Kubernetes and Longhorn; raised unit-test coverage of CLI tools from 0% to 60% and improved end-to-end test quality."
+
+- company: MayaData Inc.
+  location: Bangalore, India
+  role: Software Engineering Intern
+  period: May 2017 — Apr 2018
+  highlights:
+    - "Built maya-exporter to monitor the Jiva storage engine and implemented distributed tracing across storage services."
+    - "Enhanced CLI tools based on customer feedback and contributed to the open-source Ceph project."

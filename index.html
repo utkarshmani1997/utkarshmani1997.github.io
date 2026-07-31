@@ -1,0 +1,122 @@
+---
+layout: default
+---
+
+<!-- ============ DEVELOPER MODE ============ -->
+<section class="view view-dev" aria-label="Developer">
+
+  <div class="hero hero-dev">
+    <div class="terminal">
+      <div class="term-bar"><span></span><span></span><span></span></div>
+      <div class="term-body">
+        <p class="term-line"><span class="prompt">utkarsh@jfrog</span>:<span class="path">~</span>$ whoami</p>
+        <h1 class="term-name">Utkarsh Mani Tripathi</h1>
+        <p class="term-line comment">// Senior Software Engineer · 8+ yrs · Go &amp; distributed systems</p>
+        <p class="term-line comment">// DevSecOps @ JFrog (Xray, Curation) · ex-MayaData (OpenEBS)</p>
+        <p class="term-line"><span class="prompt">utkarsh@jfrog</span>:<span class="path">~</span>$ <span class="cursor">cat mission.txt</span></p>
+        <p class="term-out">I build systems that stay correct at scale — thousands of requests
+        per second, terabytes of artifacts, and the boring reliability that makes them trustworthy.</p>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">Request résumé &amp; contact</a>
+      <a class="btn" href="https://github.com/{{ site.github }}" target="_blank" rel="noopener">GitHub profile</a>
+    </div>
+    <p class="hero-note">// résumé and contact details shared on request via LinkedIn</p>
+  </div>
+
+  <section class="block" aria-labelledby="skills-h">
+    <h2 id="skills-h" class="block-h">Skills</h2>
+    <div class="skills-grid">
+      {% for g in site.data.skills %}
+      <div class="skill-card">
+        <p class="skill-group">{{ g.group }}</p>
+        <ul class="skill-items">
+          {% for it in g.items %}<li>{{ it }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="exp-h">
+    <h2 id="exp-h" class="block-h">Experience</h2>
+    <div class="timeline">
+      {% for job in site.data.experience %}
+      <article class="job">
+        <div class="job-head">
+          <h3 class="job-role">{{ job.role }} <span class="job-co">· {{ job.company }}</span></h3>
+          <p class="job-meta">{{ job.period }} · {{ job.location }}</p>
+        </div>
+        <ul class="job-points">
+          {% for h in job.highlights %}<li>{{ h }}</li>{% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="proj-h">
+    <h2 id="proj-h" class="block-h">Open source &amp; projects</h2>
+    <div class="proj-grid">
+      {% for p in site.data.projects %}
+      <a class="proj-card" href="{{ p.repo }}" target="_blank" rel="noopener">
+        <div class="proj-top">
+          <span class="proj-name">{{ p.name }}</span>
+          {% if p.stars %}<span class="proj-stars">★ {{ p.stars }}</span>{% endif %}
+        </div>
+        <p class="proj-desc">{{ p.desc }}</p>
+        <div class="proj-tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}</div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+</section>
+
+<!-- ============ CLEAN MODE ============ -->
+<section class="view view-clean" aria-label="Writer">
+
+  <div class="hero hero-clean">
+    <p class="clean-kicker">the other side</p>
+    <h1 class="clean-title">I write to stay honest.</h1>
+    <p class="clean-lead">
+      Away from the terminals and the on-call pages, I keep a notebook — quotes,
+      poems, the occasional blog, and posts that are mostly sarcasm wearing a nice coat.
+      Same person, quieter font.
+    </p>
+  </div>
+
+  <section class="block" aria-labelledby="writ-h">
+    <div class="writ-head">
+      <h2 id="writ-h" class="block-h">Writings</h2>
+      <div class="filters" role="tablist" aria-label="Filter writings">
+        <button class="chip is-active" data-filter="all">All</button>
+        <button class="chip" data-filter="quote">Quotes</button>
+        <button class="chip" data-filter="poem">Poems</button>
+        <button class="chip" data-filter="blog">Blogs</button>
+        <button class="chip" data-filter="sarcasm">Sarcasm</button>
+      </div>
+    </div>
+
+    <div class="writ-grid">
+      {% assign posts = site.writings | sort: 'date' | reverse %}
+      {% for w in posts %}
+      <a class="writ-card cat-{{ w.category }}" href="{{ w.url | relative_url }}" data-category="{{ w.category }}">
+        <span class="writ-cat">{{ w.category }}</span>
+        <h3 class="writ-title">{{ w.title }}</h3>
+        <p class="writ-excerpt">{{ w.excerpt | default: w.content | strip_html | truncate: 120 }}</p>
+        <time class="writ-date">{{ w.date | date: "%b %-d, %Y" }}</time>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="writ-empty" hidden>No writings in this category yet.</p>
+  </section>
+
+  <section class="block" aria-labelledby="med-h">
+    <h2 id="med-h" class="block-h">Elsewhere</h2>
+    <a class="medium-card" href="https://medium.com/@{{ site.medium }}" target="_blank" rel="noopener">
+      <span class="medium-label">Read longer pieces on Medium</span>
+      <span class="medium-handle">@{{ site.medium }} →</span>
+    </a>
+  </section>
+</section>

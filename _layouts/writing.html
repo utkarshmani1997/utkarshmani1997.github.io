@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<script>document.documentElement.setAttribute('data-force-mode', 'clean');
+document.documentElement.setAttribute('data-mode', 'clean');</script>
+
+<article class="writing view-clean">
+  <header class="writing-header">
+    <span class="writ-cat cat-{{ page.category }}">{{ page.category }}</span>
+    <h1 class="writing-title">{{ page.title }}</h1>
+    <time class="writing-date">{{ page.date | date: "%B %-d, %Y" }}</time>
+  </header>
+  <div class="writing-body">
+    {{ content }}
+  </div>
+</article>

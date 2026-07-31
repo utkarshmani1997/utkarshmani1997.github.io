@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="dev">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.layout == 'writing' %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · {{ site.tagline }}{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | truncate: 160 }}">
+  <meta name="author" content="{{ site.author }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ site.title }} · {{ site.tagline }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:url" content="{{ site.url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌨️</text></svg>">
+  {% feed_meta %}
+
+  <script>
+    (function () {
+      var forced = document.documentElement.getAttribute('data-force-mode');
+      var mode = forced || localStorage.getItem('umt-mode') ||
+        (location.hash === '#clean' ? 'clean' : 'dev');
+      document.documentElement.setAttribute('data-mode', mode);
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark">UMT</span>
+      <span class="brand-name">Utkarsh Mani Tripathi</span>
+    </a>
+
+    {% if page.layout == 'writing' %}
+      <a class="back-link" href="{{ '/#clean' | relative_url }}">← all writings</a>
+    {% else %}
+      <div class="mode-toggle" role="tablist" aria-label="Switch site mode">
+        <button class="mode-btn" data-mode-target="dev" role="tab" aria-selected="true">Developer</button>
+        <button class="mode-btn" data-mode-target="clean" role="tab" aria-selected="false">Clean</button>
+        <span class="mode-thumb" aria-hidden="true"></span>
+      </div>
+    {% endif %}
+  </header>
+
+  <main class="site-main">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="contact-inner">
+      <p class="contact-lead">Say hello</p>
+      <p class="contact-sub">Résumé and contact details are shared on request — reach out on LinkedIn.</p>
+      <nav class="contact-links" aria-label="Contact">
+        <a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/{{ site.github }}" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://medium.com/@{{ site.medium }}" target="_blank" rel="noopener">Medium</a>
+      </nav>
+      <p class="colophon">© {{ 'now' | date: "%Y" }} {{ site.author }} · built with Jekyll on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/mode.js' | relative_url }}"></script>
+</body>
+</html>

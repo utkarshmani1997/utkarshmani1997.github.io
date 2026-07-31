@@ -1,0 +1,32 @@
+# Open-source & notable projects — shown in Developer mode.
+# Sourced from github.com/utkarshmani1997.
+
+- name: OpenEBS Jiva
+  repo: https://github.com/openebs-archive/jiva
+  desc: CAS data engine — an iSCSI distributed block-storage controller built in Go.
+  tags: [Go, Storage, Kubernetes]
+  stars: 144
+
+- name: jiva-operator
+  repo: https://github.com/openebs-archive/jiva-operator
+  desc: Kubernetes operator that manages Jiva volumes via custom resources.
+  tags: [Go, Operator, CSI]
+  stars: 47
+
+- name: jiva-csi
+  repo: https://github.com/openebs-archive/jiva-csi
+  desc: CSI driver for OpenEBS Jiva volumes.
+  tags: [Go, CSI, Kubernetes]
+  stars: 7
+
+- name: Kubernetes / Longhorn / Ceph
+  repo: https://github.com/kubernetes/kubernetes
+  desc: Upstream contributions across cloud-native storage and orchestration projects.
+  tags: [Go, OSS, Distributed Systems]
+  stars: null
+
+- name: golearn
+  repo: https://github.com/utkarshmani1997/golearn
+  desc: A hands-on collection of Go language explorations and patterns.
+  tags: [Go, Learning]
+  stars: 8

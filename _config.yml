@@ -1,0 +1,39 @@
+title: Utkarsh Mani Tripathi
+tagline: Senior Software Engineer · Writer
+description: >-
+  Senior Software Engineer building high-scale distributed systems in Go,
+  and a writer of quotes, poems, blogs, and the occasional sarcastic post.
+url: "https://utkarshmani1997.github.io"
+author: Utkarsh Mani Tripathi
+
+# Contact / social — email and phone are intentionally NOT here.
+# CV and contact details are shared on request via LinkedIn.
+github: utkarshmani1997
+linkedin: utkarshmani1997
+medium: utkarshmani1997
+
+# Writings live in this collection. Drop a markdown file in _writings/ to publish.
+collections:
+  writings:
+    output: true
+    permalink: /writings/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: writings
+    values:
+      layout: writing
+
+markdown: kramdown
+permalink: pretty
+
+# github-pages sets safe: true; only whitelisted plugins run.
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
