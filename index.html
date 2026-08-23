@@ -111,6 +111,7 @@ layout: default
         <span class="writ-cat cat-{{ w.category }}">{{ w.category }}</span>
         <h3 class="writ-title">{{ w.title }}</h3>
         <p class="writ-excerpt">{{ w.excerpt | default: w.content | strip_html | truncate: 120 }}</p>
+        {% if w.credit %}<span class="writ-credit">— {{ w.credit }}</span>{% endif %}
         {% if w.date %}<time class="writ-date">{{ w.date | date: "%b %-d, %Y" }}</time>{% endif %}
       </a>
       {% endif %}

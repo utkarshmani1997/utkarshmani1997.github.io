@@ -298,6 +298,19 @@ html[data-mode="clean"] .block-h {
 }
 .writing-body a { color: var(--accent); text-underline-offset: 3px; }
 .writing-body strong { font-weight: 600; }
+.writing-body ul, .writing-body ol { margin: 0 0 1.2em; padding-left: 1.4em; }
+.writing-body li { margin-bottom: .5em; white-space: normal; }
+
+/* Long-form satire / prose reads better a little wider and smaller */
+.writing.cat-sarcasm, .writing.cat-blog { max-width: 64ch; }
+.writing.cat-sarcasm .writing-title, .writing.cat-blog .writing-title { text-align: left; }
+.writing.cat-sarcasm .writing-body, .writing.cat-blog .writing-body { font-size: 18px; }
+.writing[lang="hi"].cat-sarcasm .writing-body, .writing[lang="hi"].cat-blog .writing-body { line-height: 1.9; }
+
+/* Attribution / credit for pieces by other authors */
+.writing-credit { margin-top: 2.4em; color: var(--muted); font-style: italic;
+  font-family: var(--sans); font-size: 15px; }
+.writ-credit { display: block; margin-top: 10px; font-size: 12.5px; color: var(--muted); font-style: italic; }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--border); margin-top: 40px; }

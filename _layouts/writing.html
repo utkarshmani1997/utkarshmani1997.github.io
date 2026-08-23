@@ -19,5 +19,6 @@ document.documentElement.setAttribute('data-mode', 'clean');</script>
   <div class="writing-body">
     {{ content }}
   </div>
+  {% if page.credit %}<p class="writing-credit">— {{ page.credit }}</p>{% endif %}
   {% endif %}
 </article>
