@@ -1,9 +1,9 @@
 # utkarshmani1997.github.io
 
-My personal portfolio — a **dual-mode** site:
+My personal portfolio — a **dual-mode** site (toggle labelled **Engineer / Writer**):
 
-- **Developer mode** — engineering work: experience, skills, open-source projects, résumé.
-- **Clean mode** — my writing: quotes, poems, blogs, and sarcastic posts.
+- **Engineer mode** — engineering work: experience, skills, open-source projects, résumé.
+- **Writer mode** — my writing: quotes, poems, blogs, and sarcastic posts.
 
 Live at **https://utkarshmani1997.github.io**. Built with [Jekyll](https://jekyllrb.com/)
 and served by GitHub Pages, which rebuilds automatically on every push.
@@ -38,14 +38,14 @@ and served by GitHub Pages, which rebuilds automatically on every push.
    ```
 
 That's it. GitHub Pages rebuilds and the piece is live in about a minute — it
-appears automatically in Clean mode under its category, with its own page.
+appears automatically in Writer mode under its category, with its own page.
 
 **Categories** map to the filter chips (`quote`, `poem`, `blog`, `sarcasm`).
 To add a new category, add a chip in `index.html` (`data-filter="..."`).
 
 ---
 
-## Editing the Developer side
+## Editing the Engineer side
 
 Content is data-driven — no HTML editing needed:
 
