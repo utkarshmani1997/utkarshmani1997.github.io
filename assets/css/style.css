@@ -13,9 +13,10 @@ a { color: inherit; }
 
 /* ---------- Theme tokens ---------- */
 :root {
-  --sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --serif: 'Lora', Georgia, serif;
+  --sans: 'Inter', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+  --serif: 'Lora', 'Noto Serif Devanagari', Georgia, serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --devanagari: 'Noto Serif Devanagari', 'Lora', Georgia, serif;
   --maxw: 960px;
   --radius: 12px;
   --transition: .45s cubic-bezier(.22,.61,.36,1);
@@ -248,6 +249,31 @@ html[data-mode="clean"] .block-h {
 .writ-excerpt { color: var(--muted); font-size: 14.5px; margin: 0; flex: 1; }
 .writ-date { color: var(--muted); font-size: 12.5px; margin-top: 14px; opacity: .8; }
 .writ-empty { color: var(--muted); font-style: italic; margin-top: 20px; }
+
+/* Quote cards — the quote itself is the content */
+.quote-card { justify-content: flex-start; }
+.quote-text {
+  font-family: var(--serif); font-size: 19px; line-height: 1.55;
+  color: var(--text); margin: 6px 0 0; white-space: pre-line;
+}
+.quote-card::before {
+  content: '\201C'; font-family: var(--serif); font-size: 40px;
+  line-height: 0; color: var(--accent); opacity: .35; display: block; height: 18px;
+}
+
+/* Devanagari tuning — Hindi reads better with a touch more height */
+[lang="hi"] .quote-text, [lang="hi"] .writ-title { line-height: 1.7; }
+.quote-text[lang], .writing[lang="hi"] .quote-big, .writing[lang="hi"] .writing-body { font-family: var(--devanagari); }
+
+/* Single quote permalink */
+.quote-full { max-width: 40ch; margin: 8vh auto 0; text-align: center; }
+.quote-full .writ-cat { display: inline-block; margin-bottom: 24px; }
+.quote-big {
+  font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 4.5vw, 34px);
+  line-height: 1.5; color: var(--text); margin: 0; white-space: pre-line;
+  border: 0; padding: 0; font-style: normal;
+}
+.writing[lang="hi"] .quote-big { line-height: 1.7; font-family: var(--devanagari); }
 
 .medium-card {
   display: flex; align-items: center; justify-content: space-between; gap: 12px;

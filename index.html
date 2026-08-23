@@ -99,14 +99,21 @@ layout: default
     </div>
 
     <div class="writ-grid">
-      {% assign posts = site.writings | sort: 'date' | reverse %}
+      {% assign posts = site.writings | sort: 'title' %}
       {% for w in posts %}
-      <a class="writ-card cat-{{ w.category }}" href="{{ w.url | relative_url }}" data-category="{{ w.category }}">
-        <span class="writ-cat">{{ w.category }}</span>
+      {% if w.category == 'quote' %}
+      <a class="writ-card quote-card" href="{{ w.url | relative_url }}" data-category="quote" lang="{{ w.lang | default: 'en' }}">
+        <span class="writ-cat cat-quote">quote</span>
+        <p class="quote-text">{{ w.content | strip_html | strip }}</p>
+      </a>
+      {% else %}
+      <a class="writ-card" href="{{ w.url | relative_url }}" data-category="{{ w.category }}" lang="{{ w.lang | default: 'en' }}">
+        <span class="writ-cat cat-{{ w.category }}">{{ w.category }}</span>
         <h3 class="writ-title">{{ w.title }}</h3>
         <p class="writ-excerpt">{{ w.excerpt | default: w.content | strip_html | truncate: 120 }}</p>
-        <time class="writ-date">{{ w.date | date: "%b %-d, %Y" }}</time>
+        {% if w.date %}<time class="writ-date">{{ w.date | date: "%b %-d, %Y" }}</time>{% endif %}
       </a>
+      {% endif %}
       {% endfor %}
     </div>
     <p class="writ-empty" hidden>No writings in this category yet.</p>

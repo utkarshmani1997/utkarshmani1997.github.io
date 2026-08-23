@@ -4,13 +4,20 @@ layout: default
 <script>document.documentElement.setAttribute('data-force-mode', 'clean');
 document.documentElement.setAttribute('data-mode', 'clean');</script>
 
-<article class="writing view-clean">
+<article class="writing view-clean cat-{{ page.category }}" lang="{{ page.lang | default: 'en' }}">
+  {% if page.category == 'quote' %}
+  <div class="quote-full">
+    <span class="writ-cat cat-quote">quote</span>
+    <blockquote class="quote-big">{{ content | strip_html | strip }}</blockquote>
+  </div>
+  {% else %}
   <header class="writing-header">
     <span class="writ-cat cat-{{ page.category }}">{{ page.category }}</span>
     <h1 class="writing-title">{{ page.title }}</h1>
-    <time class="writing-date">{{ page.date | date: "%B %-d, %Y" }}</time>
+    {% if page.date %}<time class="writing-date">{{ page.date | date: "%B %-d, %Y" }}</time>{% endif %}
   </header>
   <div class="writing-body">
     {{ content }}
   </div>
+  {% endif %}
 </article>
