@@ -55,17 +55,17 @@
     try { document.execCommand('copy'); } catch (e) {}
     document.body.removeChild(ta);
   }
-  document.querySelectorAll('.copy-link').forEach(function (btn) {
+  document.querySelectorAll('[data-copy]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var url = btn.dataset.url;
+      var text = btn.dataset.copy;
       var label = btn.textContent;
       var done = function () {
-        btn.textContent = 'Copied!';
-        setTimeout(function () { btn.textContent = label; }, 1500);
+        btn.textContent = btn.dataset.done || 'Copied!';
+        setTimeout(function () { btn.textContent = label; }, 1800);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(done, function () { fallbackCopy(url); done(); });
-      } else { fallbackCopy(url); done(); }
+        navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+      } else { fallbackCopy(text); done(); }
     });
   });
 })();
