@@ -312,6 +312,19 @@ html[data-mode="clean"] .block-h {
   font-family: var(--sans); font-size: 15px; }
 .writ-credit { display: block; margin-top: 10px; font-size: 12.5px; color: var(--muted); font-style: italic; }
 
+/* Share + ownership note on writing pages */
+.writing-share { margin-top: 3em; padding-top: 1.6em; border-top: 1px solid var(--border); }
+.ownership { font-family: var(--sans); font-size: 14px; color: var(--muted); line-height: 1.75; margin: 0 0 1.3em; }
+.ownership-en { display: block; margin-top: 6px; font-size: 13px; opacity: .9; }
+.share-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.share-label { font-family: var(--sans); font-size: 13px; color: var(--muted); margin-right: 2px; }
+.share-btn { font-family: var(--sans); font-size: 13px; text-decoration: none; cursor: pointer;
+  padding: 6px 13px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); transition: border-color .2s ease, color .2s ease; }
+.share-btn:hover { border-color: var(--accent); color: var(--accent); }
+.writing.cat-quote .writing-share { max-width: 40ch; margin-left: auto; margin-right: auto; text-align: center; }
+.writing.cat-quote .share-row { justify-content: center; }
+
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--border); margin-top: 40px; }
 .contact-inner { max-width: var(--maxw); margin: 0 auto; padding: 48px 24px; text-align: center; }

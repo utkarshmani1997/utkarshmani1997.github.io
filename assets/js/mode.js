@@ -46,4 +46,26 @@
       if (empty) empty.hidden = shown !== 0;
     });
   });
+
+  // ---- Copy link ----
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  document.querySelectorAll('.copy-link').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var url = btn.dataset.url;
+      var label = btn.textContent;
+      var done = function () {
+        btn.textContent = 'Copied!';
+        setTimeout(function () { btn.textContent = label; }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done, function () { fallbackCopy(url); done(); });
+      } else { fallbackCopy(url); done(); }
+    });
+  });
 })();
