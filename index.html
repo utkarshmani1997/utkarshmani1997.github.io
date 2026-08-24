@@ -71,6 +71,19 @@ layout: default
       {% endfor %}
     </div>
   </section>
+
+  <section class="block" aria-labelledby="blog-h">
+    <h2 id="blog-h" class="block-h">Technical writing</h2>
+    <div class="blog-list">
+      {% for b in site.data.blogs %}
+      <a class="blog-item" href="{{ b.url }}" target="_blank" rel="noopener">
+        <span class="blog-title">{{ b.title }}</span>
+        {% if b.tags %}<span class="blog-tags">{% for t in b.tags %}{{ t }}{% unless forloop.last %} · {% endunless %}{% endfor %}</span>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    <a class="blog-more" href="https://medium.com/@{{ site.medium }}" target="_blank" rel="noopener">More on Medium →</a>
+  </section>
 </section>
 
 <!-- ============ CLEAN MODE ============ -->
@@ -118,13 +131,5 @@ layout: default
       {% endfor %}
     </div>
     <p class="writ-empty" hidden>No writings in this category yet.</p>
-  </section>
-
-  <section class="block" aria-labelledby="med-h">
-    <h2 id="med-h" class="block-h">Elsewhere</h2>
-    <a class="medium-card" href="https://medium.com/@{{ site.medium }}" target="_blank" rel="noopener">
-      <span class="medium-label">Read longer pieces on Medium</span>
-      <span class="medium-handle">@{{ site.medium }} →</span>
-    </a>
   </section>
 </section>

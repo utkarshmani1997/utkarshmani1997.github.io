@@ -1,0 +1,30 @@
+# Technical blog posts on Medium — shown in Engineer mode.
+# Add a new post: copy a block, set title + url (+ optional tags), commit, push.
+
+- title: "Unit Testing with Ginkgo: Part 1"
+  url: https://medium.com/@utkarshmani1997/unit-testing-with-ginkgo-part-1-be7acc6c84c6
+  tags: [Go, Testing]
+
+- title: "Unit Testing with Ginkgo: Part 2"
+  url: https://medium.com/@utkarshmani1997/unit-testing-with-ginkgo-part-2-fe6ed881c635
+  tags: [Go, Testing]
+
+- title: "Unit Testing with Ginkgo: Part 3"
+  url: https://medium.com/@utkarshmani1997/unit-testing-with-ginkgo-part-3-9c1a4b892e01
+  tags: [Go, Testing]
+
+- title: "Mocking with mockgen"
+  url: https://medium.com/@utkarshmani1997/mocking-with-mockgen-43513e3091b5
+  tags: [Go, Testing]
+
+- title: "The Curious Case of the Missing Index"
+  url: https://medium.com/@utkarshmani1997/the-curious-case-of-the-missing-index-61195e0ef599
+  tags: [Databases]
+
+- title: "Docking with Docker"
+  url: https://medium.com/@utkarshmani1997/docking-with-docker-55c36f333d45
+  tags: [Docker]
+
+- title: "Docker For Beginners: An Introduction"
+  url: https://medium.com/@utkarshmani1997/docker-for-kids-d68ec8d66ca5
+  tags: [Docker]
