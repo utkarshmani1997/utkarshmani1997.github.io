@@ -12,6 +12,11 @@ github: utkarshmani1997
 linkedin: utkarshmani1997
 medium: utkarshmani1997
 
+# Analytics — GoatCounter (privacy-friendly, cookieless, no consent banner).
+# Set this to your GoatCounter site code, e.g. "utkarshmani1997" for a site
+# registered at https://utkarshmani1997.goatcounter.com. Leave empty to disable.
+goatcounter_code: ""
+
 # Writings live in this collection. Drop a markdown file in _writings/ to publish.
 collections:
   writings:

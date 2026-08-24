@@ -68,4 +68,17 @@
       } else { fallbackCopy(text); done(); }
     });
   });
+
+  // ---- Share-click analytics (records an event in GoatCounter, if enabled) ----
+  document.querySelectorAll('[data-share]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      if (window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({
+          path: 'share-' + el.dataset.share,
+          title: 'Share: ' + el.dataset.share,
+          event: true
+        });
+      }
+    });
+  });
 })();
